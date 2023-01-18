@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>3Prompts</title>
+    </head>
+
+    <body>
+
+    </body>
+
+    <script>
+        var decision = confirm("Do you want to play?");
+        if (decision) {
+            var count = 0;
+            var invalid = 0;
+            var sum = 0;
+
+            do {
+                var value = prompt("Please enter a number:");
+                if (!isNaN(value)) {
+                    if (value.indexOf(".") == -1) {
+                        sum += parseInt(value);
+                        count++;
+                    }
+                    else if (value.indexOf(".") > -1) {
+                        alert("Please enter a whole number");
+                        invalid++;
+                    }
+                    else {
+                        alert("Your entry can't be interpreted");
+                        invalid++;
+                    }
+                }
+                else if (isNaN(value)) {
+                    alert("You are a  moron.\nPlease enter a whole number");
+                    invalid++;
+                }
+                else {
+                    alert("Your entry is not recognized");
+                    invalid++;
+                }
+            } while (count < 3);
+            document.write("The sum of your three Integars is: " + sum);
+            document.write("\nThe number of invalid entries was: " + invalid);
+        }
+        else {
+            alert("Okay. Goodbye for now");
+        }
+
+
+    </script>
+
+</html>
